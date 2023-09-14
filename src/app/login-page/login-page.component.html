@@ -1,0 +1,18 @@
+<div class="signup-container">
+    <h1>Login</h1>
+    <div class="login-error" *ngIf="this.error">Invalid credentials</div>
+    <div class="signup-container__form">
+        <div>
+            <label for="email">Enter Email:</label>
+            <input type="text" name="email" [(ngModel)]="form.email"/>
+        </div>
+        <div>
+            <label for="passwd">Enter password:</label>
+            <input type="password" name="password" [(ngModel)]="form.password"/>
+        </div>
+    </div>
+    <div class="signup-container__btn">
+        <button class="submit" type="submit" (click)="onSubmit()">Login</button>
+        <button class="reset" type="button" (click)="onSignUp()">Sign Up</button>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="signup-container">
+    <h1>SignUp</h1>
+    <div class="error" *ngIf="error">Password does not match</div>
+    <div class="signup-container__form">
+        <div>
+            <label for="username">Enter Name:</label>
+            <input type="text" name="username"  [(ngModel)]="form.name">
+        </div>
+        <div>
+            <label for="email">Enter Email:</label>
+            <input type="text" name="email" [(ngModel)]="form.email"/>
+        </div>
+        <div>
+            <label for="passwd">Enter password:</label>
+            <input type="password" name="password" [(ngModel)]="form.password">
+        </div>
+        <div>   
+            <label for="confirmpasswd">Confirm password:</label>
+            <input type="password" name="confirmpasswd" [(ngModel)]="form.cpassword"/>
+        </div>
+    </div>
+    <div class="signup-container__btn">
+        <button class="submit" type="submit" (click)="onSubmit()">Sign Up</button>
+        <button class="reset" type="reset" (click)="onReset()">Reset</button>
+    </div>
+</div>
+
+{{form | json}}
