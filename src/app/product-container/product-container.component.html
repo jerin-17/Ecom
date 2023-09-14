@@ -1,0 +1,25 @@
+<app-topbar [categoryList]= "categoryList" (selectedCategory)="addCategory($event)"
+[offerList]="offerList" (selectedOffer)="addOffer($event)"> </app-topbar>
+<app-product-list [productList]="productList" (cartList)="addToCart($event)"></app-product-list>
+<div class="cart-list">
+    <div class="cart-list__list">
+        <ng-container *ngFor="let cart of cartList">
+            <div class="cart-list__item">{{cart.label}}</div>
+        </ng-container>
+    </div>
+
+    <div>
+        <ng-container *ngFor="let category of selectedCategoryList">
+            <p>{{category.label}}</p>
+        </ng-container>
+    </div>
+
+    <div>
+        <ng-container *ngFor="let offer of selectedOfferList">
+            <p>{{offer.label}}</p>
+        </ng-container>
+    </div>
+</div>
+
+
+

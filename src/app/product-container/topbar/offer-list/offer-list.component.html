@@ -1,0 +1,6 @@
+<div class="offer-list__list">
+    <ng-container *ngFor="let offer of offerList">
+        <div (click)="addOffer(offer)" class="offer-list__item">{{offer.label}}</div>
+      
+    </ng-container>
+</div>

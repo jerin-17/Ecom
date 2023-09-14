@@ -1,0 +1,10 @@
+<div class="topbar">
+    <div class="category-list">
+    <app-category-list  [categoryList]="categoryList" (selectedCategoryList)="addCategory($event)"></app-category-list>
+    <button (click)="addSelectedCategoryList()">addCategory</button>
+    </div>
+    <div>
+    <app-offer-list [offerList]="offerList" (selectedOfferList)="addOffer($event)"></app-offer-list>
+    <button (click)="addSelectedOfferList()">add Offer</button>
+    </div>
+</div>

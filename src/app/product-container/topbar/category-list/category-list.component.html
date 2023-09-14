@@ -1,0 +1,9 @@
+
+
+   
+    <div class="category-list__list">
+        <ng-container *ngFor="let category of categoryList">
+            <div class="category-list__item" (click)="addCategory(category)">{{category.label}}</div>
+        </ng-container>
+    </div>
+
