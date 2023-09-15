@@ -1,28 +1,37 @@
 <div class="signup-container">
     <h1>SignUp</h1>
-    <div class="error" *ngIf="error">Password does not match</div>
-    <div class="signup-container__form">
-        <div>
-            <label for="username">Enter Name:</label>
-            <input type="text" name="username"  [(ngModel)]="form.name">
+    <div class="error" *ngIf="!signUpForm.valid && signUpForm.touched" >All fields are required</div>
+    <form [formGroup]="signUpForm"(ngSubmit)="onSubmit()">
+        <div class="signup-container__form">
+            <div>
+                <label for="username">Enter Name:</label>
+                <input type="text" name="username"  formControlName="name">
+                <div class="validation-error" *ngIf="signUpForm.controls['name'].hasError('required')">username is required</div>
+            </div>
+            <div>
+                <label for="email">Enter Email:</label>
+                <input type="text" name="email" formControlName="email"/>
+                <div class="validation-error" *ngIf="signUpForm.controls['email'].hasError('required')">email is required</div>
+
+            </div>
+            <div>
+                <label for="passwd">Enter password:</label>
+                <input type="password" name="password" formControlName="password">
+                <div class="validation-error" *ngIf="signUpForm.controls['password'].hasError('required')">passwordis required</div>
+
+            </div>
+            <div>   
+                <label for="confirmpasswd">Confirm password:</label>
+                <input type="password" name="confirmpasswd" formControlName="confirmPassword"/>
+                <div class="validation-error" *ngIf="signUpForm.controls['confirmPassword'].hasError('required')">confirm password is required</div>
+
+            </div>
         </div>
-        <div>
-            <label for="email">Enter Email:</label>
-            <input type="text" name="email" [(ngModel)]="form.email"/>
+        <div class="signup-container__btn">
+            <button class="submit" type="submit" >Sign Up</button>
+            <button class="reset" type="reset" (click)="onReset()">Reset</button>
         </div>
-        <div>
-            <label for="passwd">Enter password:</label>
-            <input type="password" name="password" [(ngModel)]="form.password">
-        </div>
-        <div>   
-            <label for="confirmpasswd">Confirm password:</label>
-            <input type="password" name="confirmpasswd" [(ngModel)]="form.cpassword"/>
-        </div>
-    </div>
-    <div class="signup-container__btn">
-        <button class="submit" type="submit" (click)="onSubmit()">Sign Up</button>
-        <button class="reset" type="reset" (click)="onReset()">Reset</button>
-    </div>
+    </form>
 </div>
 
-{{form | json}}
+{{signUpForm.value | json}}

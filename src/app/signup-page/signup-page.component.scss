@@ -7,7 +7,9 @@
             font-weight: bolder;
             margin-right: 1rem;
         }
-        label,input{
+        .validation-error{
+            color:red;
+            margin-top: 2px;
             margin-bottom: 1rem;
         }
     }
@@ -28,3 +30,4 @@
 
     }
 }
+

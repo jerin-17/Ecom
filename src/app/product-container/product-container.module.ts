@@ -6,10 +6,11 @@ import { ProductContainerComponent } from './product-container.component';
 import { CategoryListComponent } from './topbar/category-list/category-list.component';
 import { OfferListComponent } from './topbar/offer-list/offer-list.component';
 import { ProductCreatePageComponent } from './product-create-page/product-create-page.component';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersistantStorageService } from '../services/persistant-storage.service';
 import { OnlyNumberDirective } from '../directives/only-number.directive';
 import { CapitalizePipe } from '../pipes/capitalize.pipe';
+import { SharedDataServiceService } from '../services/shared-data-service.service';
 
 
 
@@ -26,13 +27,15 @@ import { CapitalizePipe } from '../pipes/capitalize.pipe';
     CommonModule,
     FormsModule,
     OnlyNumberDirective,
-    CapitalizePipe
+    CapitalizePipe,
+    ReactiveFormsModule,
   ],
 
   exports:[
     ProductContainerComponent
   ],
 
-  providers:[PersistantStorageService]
+    
+    providers:[PersistantStorageService,SharedDataServiceService]
 })
 export class ProductContainerModule { }
