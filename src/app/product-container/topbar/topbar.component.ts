@@ -9,8 +9,13 @@ import { ICategoryList, IOfferList } from './topbar.interface';
 export class TopbarComponent implements OnInit {
  @Input() public categoryList: Array<ICategoryList> = [];
  @Input() public offerList: Array<IOfferList> = [];
+
+ @Output() public selectedCategory:EventEmitter<Array<ICategoryList>> = new EventEmitter;
+ @Output() public selectedOffer:EventEmitter<Array<IOfferList>> = new EventEmitter();
+ 
   public selectedCategoryList: Array<ICategoryList> = [];
   public selectedOfferList: Array<IOfferList> = [];
+
   public ngOnInit(): void {
     this.categoryList=[
       {id: 1, label: "category1"},
@@ -39,8 +44,7 @@ export class TopbarComponent implements OnInit {
     this.selectedOfferList.push(offer);
   }
 
-  @Output() public selectedCategory:EventEmitter<Array<ICategoryList>> = new EventEmitter;
-  @Output() public selectedOffer:EventEmitter<Array<IOfferList>> = new EventEmitter();
+
   public addSelectedCategoryList(){
     this.selectedCategory.emit(this.selectedCategoryList);
   }

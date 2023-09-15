@@ -1,0 +1,28 @@
+
+<div class="product-create">
+    <div class="product-create__form">
+        <div>
+            <label>title:</label>
+            <input type="text" name="title" [(ngModel)]="bookDTO.title " />
+        </div>
+        <div>
+            <label>author:</label>
+            <input type="text" name="author"  [(ngModel)]="bookDTO.author"  />
+        </div>
+        <div>
+            <label>Summary:</label>
+            <textarea name="summary" rows="3" cols="30"  [(ngModel)]="bookDTO.summary" > </textarea>
+        </div>
+        <div>
+            <label>Notes:</label>
+            <input type="text" name="notes" [(ngModel)]="bookDTO.notes"/>
+        </div>
+        <div>
+            <label>Rating:</label>
+            <input type="number" name="rating" min="1" max="5" appOnlyNumber [(ngModel)]="bookDTO.rating"/>
+        </div>
+    </div>
+    <div class="product-create__btn">
+        <button (click)="onSubmit() ">Create</button>
+    </div>
+</div>

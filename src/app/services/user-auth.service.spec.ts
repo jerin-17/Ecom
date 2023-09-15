@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UserAuthService } from './UserAuth.service';
+import { UserAuthService } from './user-auth.service';
 
-describe('LocalstorageService', () => {
+describe('UserAuthService', () => {
   let service: UserAuthService;
 
   beforeEach(() => {

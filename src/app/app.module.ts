@@ -1,23 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductContainerModule } from './product-container/product-container.module';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { ProductContainerModule } from './product-container/product-container.module';
+import { UserAuthService } from './services/user-auth.service';
 import { SignupPageComponent } from './signup-page/signup-page.component';
-import { FormsModule } from '@angular/forms';
-import { UserAuthService } from './service/UserAuth.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    SignupPageComponent
+    SignupPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CapitalizePipe,
     ProductContainerModule,
     FormsModule
   ],

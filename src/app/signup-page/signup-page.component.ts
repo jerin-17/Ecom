@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IUserDetails } from '../app.interface';
 import { Router } from '@angular/router';
-import { UserAuthService } from '../service/UserAuth.service';
+import { UserAuthService } from '../services/user-auth.service';
+
 
 
 

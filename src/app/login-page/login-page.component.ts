@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IUserDetails } from '../app.interface';
 import { Route, Router } from '@angular/router';
-import { UserAuthService } from '../service/UserAuth.service';
+import { UserAuthService } from '../services/user-auth.service';
 
 @Component({
   selector: 'app-login-page',
@@ -21,7 +21,7 @@ export class LoginPageComponent implements OnInit {
 
   public onSubmit(){
     let isUserValid = this.userAuth.validateUser(this.form);
-    isUserValid?this.route.navigate(['product']): this.error = true;
+    isUserValid?this.route.navigate(['create']): this.error = true;
     
   }
 

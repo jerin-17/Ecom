@@ -2,7 +2,7 @@
     <div class="product-list__list">
         <ng-container *ngFor="let product of productList">
             <div class="product-list__item">
-            <div >{{product.label}}</div>
+            <div >{{product.label | capitalize}}</div>
             <button class="product-list__button" (click)="addToCart(product)" >Add to cart</button>
         </div>
         </ng-container>
